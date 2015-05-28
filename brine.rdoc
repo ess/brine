@@ -1,0 +1,5 @@
+= brine
+
+Generate this with
+    brine rdoc
+After you have described your command line interface

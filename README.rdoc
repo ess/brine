@@ -1,0 +1,6 @@
+= brine
+
+Describe your project here
+
+:include:brine.rdoc
+
