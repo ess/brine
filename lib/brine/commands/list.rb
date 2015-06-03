@@ -7,7 +7,22 @@ following labels: enhancement, feature, story, use case, user story
 LISTDESC
 
 command :list do |c|
+  c.desc 'Show pretty list'
+  c.switch [:p, :pretty]
   c.action do |global_options, options, args|
-    puts "woohoo I listed the fucking issues"
+    list = Brine.list
+
+    if options[:pretty]
+      require 'terminal-table'
+      issues = Terminal::Table.new(
+        headings: ['Number', 'Title'],
+        rows: list
+      )
+
+      issues.align_column(0, :right)
+      puts issues
+    else
+      puts list.map {|item| "#{item.first}|#{item.last}"}.join("\n")
+    end
   end
 end

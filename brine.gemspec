@@ -3,11 +3,11 @@ require File.join([File.dirname(__FILE__),'lib','brine','version.rb'])
 spec = Gem::Specification.new do |s| 
   s.name = 'brine'
   s.version = Brine::VERSION
-  s.author = 'Your Name Here'
-  s.email = 'your@email.address.com'
-  s.homepage = 'http://your.website.com'
+  s.author = 'Dennis Walters'
+  s.email = 'dwalters@engineyard.com'
+  s.homepage = 'https://github.com/ess/brine'
   s.platform = Gem::Platform::RUBY
-  s.summary = 'A description of your project'
+  s.summary = 'Sync between Github Issues and your cukes'
   s.files = `git ls-files`.split("
 ")
   s.require_paths << 'lib'
@@ -18,6 +18,11 @@ spec = Gem::Specification.new do |s|
   s.executables << 'brine'
   s.add_development_dependency('rake')
   s.add_development_dependency('rdoc')
-  s.add_development_dependency('aruba')
-  s.add_runtime_dependency('gli','2.13.0')
+  s.add_development_dependency('aruba', '~> 0.6.2')
+  s.add_development_dependency('rspec', '~> 3.2.0')
+  s.add_development_dependency('webmock', '~> 1.21.0')
+  s.add_development_dependency('vcr', '~> 2.9.3')
+  s.add_runtime_dependency('gli','~> 2.13.1')
+  s.add_runtime_dependency('github_api', '~> 0.12.3')
+  s.add_runtime_dependency('terminal-table', '~> 1.4.5')
 end

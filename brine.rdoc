@@ -1,5 +1,65 @@
-= brine
+== brine - Sync features to/from Github Issues
 
-Generate this with
-    brine rdoc
-After you have described your command line interface
+v0.0.1
+
+=== Global Options
+=== --help
+Show this message
+
+
+
+=== --version
+Display the program version
+
+
+
+=== Commands
+==== Command: <tt>help  command</tt>
+Shows a list of commands or help for one command
+
+Gets help for the application or its commands. Can also list the commands in a way helpful to creating a bash-style completion function
+===== Options
+===== -c
+List commands one per line, to assist with shell completion
+
+
+
+==== Command: <tt>initconfig </tt>
+Initialize the config file using current global options
+
+Initializes a configuration file where you can set default options for command line flags, both globally and on a per-command basis.  These defaults override the built-in defaults and allow you to omit commonly-used command line flags when invoking this program
+===== Options
+===== --[no-]force
+force overwrite of existing config file
+
+
+
+==== Command: <tt>list </tt>
+List Github issues
+
+List Github issues
+
+This lists the open issues that live in Github and have at least one of the
+following labels: enhancement, feature, story, use case, user story
+==== Command: <tt>pull  [issue or feature]</tt>
+Pull features from Github
+
+Pull features from Github
+
+If given an issue number, that issue will be written to a feature.
+
+If given a feature file, that feature will be updated from Github.
+
+If given no arguments, all issues are pulled as features.
+==== Command: <tt>push  [feature]</tt>
+Pull features from Github
+
+Push features to Github
+
+If given a feature file, that feature will be pushed to Github.
+
+If given no arguments, all features are pushed as issues.
+
+In either of the above scenarios, if an equivalent issue already
+exists, it will be updated. Otherwise, a new issue will be
+created.
